@@ -1,103 +1,87 @@
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <div className="grid w-full grid-cols-1 items-start gap-4 lg:grid-cols-2">
+        <section className="flex w-full flex-col space-y-4 lg:w-auto">
+          <div className="w-full">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="https://storage.googleapis.com/star-lab/blog/OGs/node.png"
+              width={1200}
+              height={1200}
+              alt="NodeJS"
+              className="object-fit w-full rounded-md"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </div>
+
+          <span className="text-xl font-extrabold text-gray-900 sm:text-2xl dark:text-gray-300">
+            Node.js
+          </span>
+
+          <Link
+            href="/"
+            className="text-3xl font-bold text-white/90 hover:underline"
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            Login JWT em Node.js: aprenda a proteger APIs de forma simples
+          </Link>
+        </section>
+
+        <section className="flex flex-col justify-start gap-4 text-sm text-gray-400 lg:px-20">
+          <span className="text-2xl font-black text-green-500">Destaques</span>
+
+          <Link href="/" className="group flex flex-col gap-3">
+            <h3 className="text-base font-semibold text-gray-300 uppercase">
+              Banco de dados
+            </h3>
+            <h1 className="text-xl font-bold text-gray-100 transition-all group-hover:underline">
+              O que é MongoDB? Entenda o banco de dados NoSQL mais usado do...
+            </h1>
+
+            <span className="text-sm leading-relaxed font-normal text-gray-300">
+              Descubra o que é MongoDB, como funciona e por que tantos
+              desenvolvedores escolhem este banco NoSQL...
+            </span>
+
+            <hr />
+          </Link>
+
+          <Link href="/" className="group flex flex-col gap-3">
+            <h3 className="text-base font-semibold text-gray-300 uppercase">
+              Carreira
+            </h3>
+            <h1 className="text-xl font-bold text-gray-100 transition-all group-hover:underline">
+              IA para tech leads: seu time com entregas potencializadas...
+            </h1>
+
+            <span className="text-sm leading-relaxed font-normal text-gray-300">
+              Como tech lead, você pode encarar a IA como um assistente
+              empoderado – ele faz as tarefas chatas e repetitivas...
+            </span>
+
+            <hr />
+          </Link>
+
+          <Link href="/" className="group flex flex-col gap-3">
+            <h3 className="text-base font-semibold text-gray-300 uppercase">
+              Data Analytics
+            </h3>
+            <h1 className="text-xl font-bold text-gray-100 transition-all group-hover:underline">
+              5 conceitos da análise de dados que vão mudar a forma como você vê
+              o...
+            </h1>
+
+            <span className="text-sm leading-relaxed font-normal text-gray-300">
+              mundo Conheça os 5 conceitos de análise de dados essenciais para
+              transformar seu pensamento analítico e turbinar sua carreira em
+              data analytics.
+            </span>
+          </Link>
+        </section>
+      </div>
+      <hr className="mt-8" />
+    </>
   );
 }
