@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
+import { Plus } from "lucide-react";
 
 export interface Post {
   _id: string;
@@ -75,10 +76,10 @@ const ShowMorePosts = ({ posts }: Props) => {
         <div className="mt-12 flex justify-center">
           <Button
             onClick={() => setVisibleCount((prev) => prev + 5)}
-            className="border-border text-muted-foreground hover:border-muted-foreground flex w-full items-center justify-between justify-center rounded-md border px-4 py-2 text-sm shadow-sm transition hover:cursor-pointer hover:bg-gray-800 sm:w-auto"
+            className="border-border text-muted-foreground hover:border-muted-foreground flex w-full items-center justify-between justify-center rounded-md border px-4 py-2 text-sm font-semibold uppercase shadow-sm transition hover:cursor-pointer hover:bg-gray-800 sm:w-auto"
             variant="outline"
           >
-            Ver mais posts
+            <Plus /> Carregar mais
           </Button>
         </div>
       )}
