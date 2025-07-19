@@ -39,7 +39,7 @@ const ShowMorePosts = ({ posts }: Props) => {
 
   return (
     <>
-      <div className="grid w-full gap-6 lg:grid-cols-2">
+      <div className="grid w-full gap-6 md:grid-cols-2">
         {visiblePosts.map((post) => (
           <Link
             key={post._id}

@@ -2,15 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
-import {
-  Code,
-  Cpu,
-  FolderOpen,
-  Newspaper,
-  Search,
-  Smartphone,
-  User,
-} from "lucide-react";
+import { Code, Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
