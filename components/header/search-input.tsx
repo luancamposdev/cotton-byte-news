@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
-import { Code, Search } from "lucide-react";
+import { Search } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -14,23 +15,61 @@ import {
   CommandList,
 } from "@/components/ui/command";
 
-export const SearchInput = () => {
-  const [open, setOpen] = useState<boolean>(false);
+import { fetchPosts } from "@/lib/fetchPosts"; // Certifique-se de que esse arquivo está correto
 
+interface Post {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  technology?: {
+    title?: string;
+  };
+}
+
+export const SearchInput = () => {
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [filtered, setFiltered] = useState<Post[]>([]);
+  const router = useRouter();
+
+  // Carrega os posts uma única vez
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const data = await fetchPosts();
+        setPosts(data);
+      } catch (error) {
+        console.error("Erro ao buscar os posts:", error);
+      }
+    };
+    loadPosts();
+  }, []);
+
+  // Filtra os posts sempre que `query` muda
+  useEffect(() => {
+    const lower = query.toLowerCase();
+
+    if (!lower) {
+      setFiltered([]);
+      return;
+    }
+
+    const filteredPosts = posts.filter((post) => {
+      const titleMatch = post.title.toLowerCase().includes(lower);
+      const techMatch = post.technology?.title?.toLowerCase().includes(lower);
+      return titleMatch || techMatch;
+    });
+
+    setFiltered(filteredPosts);
+  }, [query, posts]);
+
+  // Atalho de teclado (Ctrl+K ou Cmd+K)
   useHotkeys("ctrl+k, meta+k", (e) => {
     e.preventDefault();
     setOpen((prev) => !prev);
-  });
-
-  useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault();
-        setOpen((open) => !open);
-      }
-      document.addEventListener("keydown", down);
-      return () => document.removeEventListener("keydown", down);
-    };
   });
 
   return (
@@ -50,31 +89,28 @@ export const SearchInput = () => {
       </Button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Buscar no blog..." />
+        <CommandInput
+          placeholder="Buscar no blog..."
+          value={query}
+          onValueChange={setQuery}
+        />
         <CommandList>
-          <CommandEmpty>Nenhum resultado encontrado.</CommandEmpty>
+          <CommandEmpty>Nenhum post encontrado.</CommandEmpty>
 
-          <CommandGroup heading="Categorias">
-            <CommandItem onSelect={() => alert("Typescript")}>
-              <Code className="mr-2 h-4 w-4" />
-              <span>Typescript</span>
-            </CommandItem>
-            <CommandItem onSelect={() => alert("NextJS")}>
-              <Code className="mr-2 h-4 w-4" />
-              <span>NextJS</span>
-            </CommandItem>
-            <CommandItem onSelect={() => alert("NestJS")}>
-              <Code className="mr-2 h-4 w-4" />
-              <span>NestJS</span>
-            </CommandItem>
-            <CommandItem onSelect={() => alert("PHP")}>
-              <Code className="mr-2 h-4 w-4" />
-              <span>PHP</span>
-            </CommandItem>
-            <CommandItem onSelect={() => alert("NodeJS")}>
-              <Code className="mr-2 h-4 w-4" />
-              <span>NodeJS</span>
-            </CommandItem>
+          <CommandGroup heading="Busque no blog">
+            {filtered.map((post) => (
+              <CommandItem
+                key={post._id}
+                value={post.title}
+                onSelect={() => {
+                  router.push(`/blog/${post.slug.current}`);
+                  setOpen(false);
+                }}
+              >
+                <Search className="mr-2 h-4 w-4" />
+                <span>{post.title}</span>
+              </CommandItem>
+            ))}
           </CommandGroup>
         </CommandList>
       </CommandDialog>
