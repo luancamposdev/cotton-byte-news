@@ -5,11 +5,11 @@ export const getAllPostsQuery = `
     slug,
     excerpt,
     publishedAt,
-    mainImage,
     isMain,
     isFeatured,
     body,
-    "author": author->{name, image},
+    "mainImage": mainImage.asset->url,
+    "author": author->{name, "image": image.asset->url},
     "technology": technology->{title}
   }
 `;
