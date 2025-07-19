@@ -94,7 +94,7 @@ export const SearchInput = () => {
           value={query}
           onValueChange={setQuery}
         />
-        <CommandList>
+        <CommandList className="[&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400 dark:[&::-webkit-scrollbar-thumb]:bg-gray-600 [&::-webkit-scrollbar-track]:bg-transparent dark:[&::-webkit-scrollbar-track]:bg-transparent">
           <CommandEmpty>Nenhum post encontrado.</CommandEmpty>
 
           <CommandGroup heading="Busque no blog">

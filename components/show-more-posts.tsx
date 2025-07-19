@@ -33,14 +33,14 @@ interface Props {
 }
 
 const ShowMorePosts = ({ posts }: Props) => {
-  const [visibleCount, setVisibleCount] = useState<number>(4);
+  const [visibleCount, setVisibleCount] = useState<number>(6);
 
   const visiblePosts: Post[] = posts.slice(0, visibleCount);
   const hasMore: boolean = visibleCount < posts.length;
 
   return (
     <>
-      <div className="grid w-full gap-6 md:grid-cols-2">
+      <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-3">
         {visiblePosts.map((post) => (
           <Link
             key={post._id}

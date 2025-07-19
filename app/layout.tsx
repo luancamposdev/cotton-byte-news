@@ -47,7 +47,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="dark">
-      <body className="text-foreground bg-background flex min-h-screen flex-col antialiased">
+      <body className="text-foreground bg-background flex min-h-screen flex-col antialiased [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400 dark:[&::-webkit-scrollbar-thumb]:bg-gray-600 [&::-webkit-scrollbar-track]:bg-transparent dark:[&::-webkit-scrollbar-track]:bg-transparent">
         <Header />
 
         <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-6 pt-32 sm:px-6 lg:px-8">
