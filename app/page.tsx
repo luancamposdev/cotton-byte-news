@@ -20,12 +20,15 @@ export default async function HomePage() {
           <FeaturePosts />
         </section>
       </div>
+
       <hr className="mt-8" />
+
       <div className="py-8">
         <h1 className="mb-6 text-2xl font-bold text-green-500">
           Nossos últimos artigos
         </h1>
         <ShowMorePosts posts={posts} />
+        <hr className="mt-8" />
       </div>
     </>
   );
