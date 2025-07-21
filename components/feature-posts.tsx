@@ -4,16 +4,28 @@ import Link from "next/link";
 import { sanityClient } from "@/lib/sanity";
 import { getFeaturedPostsQuery } from "@/lib/queries";
 
+interface Post {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  excerpt: string;
+  technology?: {
+    title: string;
+  };
+}
+
 const FeaturePosts = async () => {
-  const posts = await sanityClient.fetch(getFeaturedPostsQuery);
+  const posts: Post[] = await sanityClient.fetch(getFeaturedPostsQuery);
 
   if (!posts || posts.length === 0) return null;
 
   return (
     <div className="flex flex-col gap-6">
-      {posts.map((post: any, index: number) => (
+      {posts.map((post: Post, index: number) => (
         <Link
-          key={index}
+          key={post._id}
           href={`/blog/${post.slug.current}`}
           className="group flex flex-col gap-3"
         >
@@ -34,4 +46,5 @@ const FeaturePosts = async () => {
     </div>
   );
 };
+
 export default FeaturePosts;
