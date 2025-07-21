@@ -43,9 +43,9 @@ const ShowMorePosts = ({ posts }: Props) => {
   return (
     <>
       <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {visiblePosts.map((post) => (
+        {visiblePosts.map((post, index: number) => (
           <Link
-            key={post._id}
+            key={index}
             href={`/blog/${post.slug.current}`}
             className="group border-border hover:bg-muted flex w-full flex-col gap-4 rounded-xl border p-4 transition"
           >

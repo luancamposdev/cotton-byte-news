@@ -7,7 +7,6 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import { getPostBySlug } from "@/lib/queries";
 import { urlFor } from "@/lib/imageUrl";
-import { Ticker } from "@/components/ui/ticker";
 
 export default async function PostPage({
   params,

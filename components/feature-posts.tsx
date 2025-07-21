@@ -13,7 +13,7 @@ const FeaturePosts = async () => {
     <div className="flex flex-col gap-6">
       {posts.map((post: any, index: number) => (
         <Link
-          key={post._id}
+          key={index}
           href={`/blog/${post.slug.current}`}
           className="group flex flex-col gap-3"
         >
