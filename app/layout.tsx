@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
 import { Header } from "@/components/header/Header";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -51,6 +52,8 @@ export default function RootLayout({
         <Header />
 
         <main className="mx-auto w-full max-w-7xl flex-1">{children}</main>
+
+        <Footer />
       </body>
     </html>
   );

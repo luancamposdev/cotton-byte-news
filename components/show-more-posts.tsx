@@ -18,7 +18,9 @@ export interface Post {
   isMain: boolean;
   isFeatured: boolean;
   body: any;
-  mainImage: string;
+  mainImage: {
+    asset: { url: string };
+  };
   author: {
     name: string;
     image: string;
@@ -49,7 +51,7 @@ const ShowMorePosts = ({ posts }: Props) => {
           >
             <div className="relative h-48 w-full overflow-hidden rounded-lg">
               <Image
-                src={post.mainImage}
+                src={post.mainImage.asset.url}
                 alt={post.title}
                 fill
                 className="object-cover"
