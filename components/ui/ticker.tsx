@@ -2,6 +2,7 @@
 
 import { motion, useAnimationFrame } from "framer-motion";
 import React, { useRef, useState, useLayoutEffect } from "react";
+import Image from "next/image";
 
 const images = [
   "/logos/nodejs.png",
@@ -50,11 +51,13 @@ export function Ticker({ speed = 100 }) {
               key={i}
               className="flex h-10 w-20 shrink-0 items-center justify-center"
             >
-              <img
+              <Image
                 src={src}
                 alt={`logo-${i}`}
                 className="h-full w-full object-contain"
                 loading="lazy"
+                width={200}
+                height={200}
               />
             </div>
           ))}
