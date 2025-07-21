@@ -3,6 +3,7 @@ import "./globals.css";
 import React from "react";
 import { Header } from "@/components/header/Header";
 import Footer from "@/components/footer/footer";
+import { Ticker } from "@/components/ui/ticker";
 
 export const metadata: Metadata = {
   title: {
@@ -53,6 +54,7 @@ export default function RootLayout({
 
         <main className="mx-auto w-full max-w-7xl flex-1">{children}</main>
 
+        <Ticker />
         <Footer />
       </body>
     </html>

@@ -90,7 +90,6 @@ export const getFeaturedPostsQuery = `
 `;
 
 export async function getPostBySlug(slug: string) {
-  console.log(slug);
   const query = `*[_type == "post" && slug.current == $slug][0] {
     _id,
     title,
@@ -113,7 +112,8 @@ export async function getPostBySlug(slug: string) {
     author->{
       _id,
       name,
-      image {
+      username,
+      avatar {
         asset->{
           url
         }

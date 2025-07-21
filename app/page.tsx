@@ -5,8 +5,6 @@ import { getAllPostsQuery } from "@/lib/queries";
 import MainPost from "@/components/main-post";
 import FeaturePosts from "@/components/feature-posts";
 import ShowMorePosts from "@/components/show-more-posts";
-import { Ticker } from "@/components/ui/ticker";
-
 export default async function HomePage() {
   const posts = await sanityClient.fetch(getAllPostsQuery);
 
@@ -22,19 +20,12 @@ export default async function HomePage() {
           <FeaturePosts />
         </section>
       </div>
-
       <hr />
-
       <section className="px-4 py-6 pt-12 sm:px-6 lg:px-8">
         <h1 className="mb-6 text-2xl font-bold text-green-500">
           Nossos últimos artigos
         </h1>
         <ShowMorePosts posts={posts} />
-      </section>
-
-      <hr className="mt-8" />
-      <section>
-        <Ticker />
       </section>
     </>
   );

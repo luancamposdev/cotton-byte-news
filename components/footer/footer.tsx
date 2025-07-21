@@ -20,13 +20,9 @@ const socialsLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-foreground mt-12 w-full border-t">
-      {/*<Newsletter />*/}
-
-      {/* Conteúdo principal */}
+    <footer className="bg-background text-foreground mt-12 w-full">
       <div className="mx-auto max-w-7xl px-6 py-14">
         <div className="grid gap-12 md:grid-cols-3">
-          {/* Branding */}
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold tracking-tight">Cotton News</h2>
             <p className="text-muted-foreground max-w-sm text-sm leading-relaxed">

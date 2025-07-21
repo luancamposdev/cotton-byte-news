@@ -38,7 +38,7 @@ export function Ticker({ speed = 100 }) {
   });
 
   return (
-    <div className="bg-background relative mt-8 overflow-hidden py-4">
+    <div className="bg-background relative mt-8 overflow-hidden border-t border-b py-8">
       <div className="relative flex whitespace-nowrap" ref={containerRef}>
         <motion.div
           className="flex items-center gap-8 px-4"
