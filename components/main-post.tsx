@@ -8,7 +8,6 @@ import { urlFor } from "@/lib/imageUrl";
 
 const MainPost = async () => {
   const post = await sanityClient.fetch(getMainPostQuery);
-  console.log(post)
 
   if (!post) return null;
 
