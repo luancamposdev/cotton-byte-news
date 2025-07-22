@@ -25,7 +25,7 @@ export function Ticker({ speed = 100 }) {
 
   useLayoutEffect(() => {
     if (contentRef.current) {
-      setWidth(contentRef.current.scrollWidth / 2); // metade do conteúdo duplicado
+      setWidth(contentRef.current.scrollWidth / 2);
     }
   }, []);
 
@@ -33,7 +33,7 @@ export function Ticker({ speed = 100 }) {
     const moveBy = (delta / 1000) * speed;
     setX((prev) => {
       const next = prev - moveBy;
-      if (Math.abs(next) >= width) return 0; // reinicia sem piscar
+      if (Math.abs(next) >= width) return 0;
       return next;
     });
   });
