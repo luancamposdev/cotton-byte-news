@@ -37,7 +37,7 @@ export const metadata: Metadata = {
       "Fique por dentro das últimas notícias de tecnologia e desenvolvimento moderno com NestJS, React, TailwindCSS, startups e muito mais.",
     type: "website",
     locale: "pt_BR",
-    url: "https://seuprojeto.com", // Substitua pelo domínio real
+    url: "https://cotton-byte-news.vercel.app",
     siteName: "Cotton Byte News",
   },
 };
