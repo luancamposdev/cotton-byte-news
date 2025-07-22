@@ -1,11 +1,3 @@
-Aqui está um modelo de README completo, moderno e atrativo, já incluindo todas as ideias sugeridas, com foco em visual dark, funcionalidades, contato e fácil adaptação ao seu repositório cotton-byte-news:
-
----
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/luancamposdev/cotton-byte-news/main/public/banner.png" alt="Cotton Byte News Banner" style="max-width: 100%;">
-</p>
-
 <h1 align="center">📰 Cotton Byte News</h1>
 <p align="center">
   Portal de notícias moderno, rápido, responsivo e com visual <b>Full Dark</b>.
@@ -139,7 +131,3 @@ Sim! Abra uma issue ou entre em contato pelo WhatsApp.
 ## 📝 Licença
 
 Projeto pessoal. Entre em contato para mais informações.
-
----
-
-Se quiser ajustar algo ou adicionar mais seções, só avisar!
