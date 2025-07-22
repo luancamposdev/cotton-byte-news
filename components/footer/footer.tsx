@@ -110,8 +110,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Rodapé inferior */}
       <div className="border-muted text-muted-foreground border-t px-6 py-4 text-center text-xs">
         &copy; {new Date().getFullYear()} <strong>Cotton News</strong>. Todos os
         direitos reservados.
