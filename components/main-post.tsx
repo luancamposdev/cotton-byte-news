@@ -8,6 +8,7 @@ import { urlFor } from "@/lib/imageUrl";
 
 const MainPost = async () => {
   const post = await sanityClient.fetch(getMainPostQuery);
+  console.log(post)
 
   if (!post) return null;
 
@@ -29,7 +30,7 @@ const MainPost = async () => {
       </span>
 
       <Link
-        href={`/blog/${post.slug.current}}`}
+        href={`/blog/${post.slug.current}`}
         className="text-3xl font-bold text-white/90 hover:underline"
       >
         {post.excerpt}
