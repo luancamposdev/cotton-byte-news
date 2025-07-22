@@ -58,16 +58,6 @@ O **Cotton Byte News** é um portal de notícias construído para quem busca inf
 
 ---
 
-## 📸 Screenshots
-
-| Home | Detalhe da Notícia |
-|------|--------------------|
-| ![Home](public/screenshot-home.png) | ![Notícia](public/screenshot-news-detail.png) |
-
-> *Adicione screenshots reais do seu projeto na pasta public para ilustrar!*
-
----
-
 ## ⚡ Como Rodar Localmente
 
 ```bash
