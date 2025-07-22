@@ -20,7 +20,6 @@
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Tecnologias](#-tecnologias)
 - [Funcionalidades](#-funcionalidades)
-- [Screenshots](#-screenshots)
 - [Como Rodar Localmente](#-como-rodar-localmente)
 - [Contato](#-contato)
 - [Contribuindo](#-contribuindo)
@@ -63,9 +62,9 @@ O **Cotton Byte News** é um portal de notícias construído para quem busca inf
 ```bash
 git clone https://github.com/luancamposdev/cotton-byte-news.git
 cd cotton-byte-news
-npm install
+pnpm install
 # Configure as variáveis do Sanity no .env.local
-npm run dev
+pnpm dev
 ```
 > Configure as credenciais do Sanity em `.env.local` conforme o projeto.
 
@@ -95,8 +94,7 @@ Contribuições são bem-vindas!
 - [x] Deploy inicial
 - [x] Integração com Sanity CMS
 - [ ] Área de comentários
-- [ ] Login de usuários
-- [ ] Switch de tema (mesmo com dark como padrão)
+- [ ] Área de newsletter
 
 ---
 
