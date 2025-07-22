@@ -15,7 +15,7 @@ import {
   CommandList,
 } from "@/components/ui/command";
 
-import { fetchPosts } from "@/lib/fetchPosts"; // Certifique-se de que esse arquivo está correto
+import { fetchPosts } from "@/lib/fetchPosts";
 
 interface Post {
   _id: string;
@@ -35,7 +35,6 @@ export const SearchInput = () => {
   const [filtered, setFiltered] = useState<Post[]>([]);
   const router = useRouter();
 
-  // Carrega os posts uma única vez
   useEffect(() => {
     const loadPosts = async () => {
       try {
@@ -48,7 +47,6 @@ export const SearchInput = () => {
     loadPosts();
   }, []);
 
-  // Filtra os posts sempre que `query` muda
   useEffect(() => {
     const lower = query.toLowerCase();
 
